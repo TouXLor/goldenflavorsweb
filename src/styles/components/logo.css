@@ -1,0 +1,35 @@
+@layer components {
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .logo__mark {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background: var(--color-brand-yellow);
+    color: var(--color-brand-navy);
+    font-weight: var(--font-weight-black);
+    font-size: 0.95rem;
+  }
+
+  .logo--lg .logo__mark {
+    width: clamp(44px, 6vw, 72px);
+    height: clamp(44px, 6vw, 72px);
+    font-size: clamp(1rem, 2vw, 1.6rem);
+  }
+
+  .logo__word {
+    font-weight: var(--font-weight-black);
+    font-size: clamp(1.25rem, 5vw, 4rem);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+}

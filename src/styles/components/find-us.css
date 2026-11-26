@@ -1,0 +1,307 @@
+@layer components {
+  .find {
+    display: grid;
+    gap: 3rem;
+    padding: 4.5rem var(--page-pad) 2.5rem;
+  }
+
+  .find__top {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .find__heading {
+    margin: 0;
+    color: var(--color-brand-navy);
+  }
+
+  /* Make both columns in the row stretch to the same height */
+  .find__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  .find__card {
+    background: var(--color-brand-yellow);
+    border-radius: 0.75rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+    height: 100%; /* Fill the stretched row height */
+    box-sizing: border-box;
+    box-shadow: 4px 4px 0 var(--color-brand-navy);
+  }
+
+  .find__date {
+    margin: 0;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: var(--font-weight-extrabold);
+  }
+
+  .find__message,
+  .find__closed p {
+    margin: 0;
+  }
+
+  .find__closed {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .find__next {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .find__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .find__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    background: var(--color-brand-navy);
+    color: var(--color-brand-yellow);
+    transition: transform var(--motion-duration-base)
+      var(--motion-ease-standard);
+  }
+
+  .find__social-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .find__social-link:focus-visible {
+    outline: 3px solid var(--color-brand-navy);
+    outline-offset: 3px;
+  }
+
+  .find__card dl {
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .find__card dt {
+    font-weight: var(--font-weight-extrabold);
+  }
+
+  .find__card dd {
+    font-size: 1.05rem;
+  }
+
+  .find__card dl > div {
+    display: grid;
+    gap: 0.125rem;
+  }
+
+  /* Ensure wrappers and images fill the available height cleanly */
+  .find__right-container,
+  .find__left-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .find__left-container {
+    align-items: center; /* Centers horizontally in a column layout */
+    justify-content: center; /* Centers vertically */
+  }
+
+  .find__img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops nicely to fill the container dimensions */
+    border-radius: 1.125rem;
+  }
+
+  .arrow {
+    width: 100%;
+    /* Minimum size is 280px, ideal size is 50% of the screen, maximum size is 600px */
+    max-width: clamp(280px, 50vw, 600px);
+    height: auto;
+  }
+  .arrow text {
+    font-family: "Caveat", cursive;
+    font-size: 26px;
+    fill: var(--color-brand-navy);
+  }
+
+  .arrow__path {
+    fill: none;
+    stroke: var(--color-neutral-black);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .find__img2 {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 22px 0 0 22px;
+    justify-self: end;
+  }
+
+  @media (max-width: 900px) {
+    .find {
+      grid-template-columns: 1fr;
+    }
+
+    .find__img2 {
+      border-radius: 18px;
+    }
+  }
+
+  /* Right column of Row 1 now holds the schedule */
+  .find__right-container--schedule {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    background: var(--color-brand-navy);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 var(--color-brand-yellow);
+  }
+
+  .schedule .spaced {
+    margin: 0;
+    color: var(--color-brand-yellow);
+  }
+
+  .schedule__message {
+    margin: 0;
+  }
+
+  .schedule__list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .schedule__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid transparent;
+    border-radius: 14px;
+  }
+
+  /* Calendar tile */
+  .schedule__date {
+    display: grid;
+    justify-items: center;
+    min-width: 3.75rem;
+    padding: 0.45rem 0.5rem;
+    background: var(--sch-yellow);
+    color: var(--sch-navy);
+    border-radius: 10px;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .schedule__weekday,
+  .schedule__month {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .schedule__day {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .schedule__details {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0; /* long locations wrap instead of overflowing */
+  }
+
+  .schedule__location,
+  .schedule__hours {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .schedule__location {
+    font-weight: 700;
+  }
+
+  .schedule__hours {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  .schedule__location svg,
+  .schedule__hours svg {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+  }
+
+  .schedule__closed {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Tags */
+  .schedule__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .schedule__tag {
+    padding: 0.1rem 0.6rem;
+    background: var(--sch-yellow);
+    color: var(--sch-navy);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .schedule__tag--alert {
+    background: #fff;
+  }
+
+  /* States */
+  .schedule__item.is-today {
+    background: rgba(255, 191, 0, 0.15);
+    border-color: var(--sch-yellow);
+  }
+
+  .schedule__item.is-closed {
+    opacity: 0.6;
+  }
+
+  .schedule__item.is-closed .schedule__date {
+    background: var(--sch-grey);
+  }
+}

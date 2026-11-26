@@ -1,0 +1,27 @@
+@layer components {
+  .marquee {
+    background: var(--color-brand-navy);
+    color: var(--color-brand-yellow);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1rem 0;
+    font-weight: var(--font-weight-extrabold);
+    font-size: var(--type-size-title);
+    letter-spacing: var(--letter-spacing-caps);
+  }
+
+  .marquee__track {
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee__group {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .marquee__group i {
+    font-style: normal;
+    padding: 0 1.4em;
+  }
+}

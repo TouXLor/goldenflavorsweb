@@ -1,0 +1,32 @@
+@layer components {
+  .gallery {
+    background: var(--color-brand-navy);
+    padding: clamp(2rem, 5vw, 5rem) var(--page-pad);
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .gallery__row {
+    display: flex;
+    gap: 0.625rem;
+    height: clamp(180px, 25vw, 400px);
+  }
+
+  .gallery__tile {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+  }
+
+  .gallery__tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .gallery__row {
+      height: clamp(120px, 32vw, 240px);
+    }
+  }
+}

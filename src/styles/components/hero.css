@@ -1,0 +1,88 @@
+@layer components {
+  .hero {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: clamp(560px, 52vw, 780px);
+    padding: calc(var(--nav-height) + 2.5rem) var(--page-pad) 3.5rem;
+  }
+
+  .bg_circle {
+    position: absolute;
+    z-index: -1;
+    right: -15%;
+    top: -34%;
+    width: 80%;
+    aspect-ratio: 7.5 / 8;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .hero__copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-black);
+    font-size: var(--type-size-hero);
+    line-height: var(--line-height-tight);
+    color: var(--color-brand-navy);
+  }
+
+  .line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.04em;
+  }
+
+  .line > span {
+    display: inline-block;
+  }
+
+  .hero__sub {
+    margin: 1.25rem 0 1.75rem;
+    max-width: 36ch;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .hero__cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero__img {
+    position: relative;
+    z-index: 1;
+    justify-self: end;
+    width: min(680px, 112%);
+    aspect-ratio: 4 / 3;
+    object-fit: contain; /* was cover: contain keeps the whole sushi visible */
+    margin-right: calc(var(--page-pad) * -1);
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-bottom: 0;
+    }
+
+    .bg_circle {
+      width: 130%;
+      right: -40%;
+      top: 10%;
+    }
+
+    .hero__img {
+      justify-self: stretch;
+      width: auto;
+      margin: 2rem calc(var(--page-pad) * -1) 0;
+    }
+  }
+}

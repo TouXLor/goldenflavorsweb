@@ -1,0 +1,102 @@
+@layer tokens {
+  :root {
+    color-scheme: light;
+
+    --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --font-body: "Figtree", "Segoe UI", sans-serif;
+
+    --color-brand-navy: #1f2937;
+    --color-brand-yellow: #ffbf00;
+    --color-brand-peach: #ffdeb0;
+    --color-brand-brown: #754f4f;
+    --color-neutral-black: #000000;
+    --color-neutral-white: #ffffff;
+    --color-neutral-200: #d9d9d9;
+    --color-neutral-200-soft: rgba(217, 217, 217, 0.5);
+    --color-surface-soft-yellow: rgba(255, 191, 0, 0.15);
+    --color-surface-soft-white: rgba(255, 255, 255, 0.15);
+
+    --shadow-soft: 0 24px 60px rgba(31, 41, 55, 0.12);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    --radius-xs: 0.5rem;
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-pill: 999px;
+
+    --page-pad: clamp(1.25rem, 5vw, 4.5rem);
+    --nav-height: 72px;
+
+    /* Breakpoint tokens (mobile-first min-width reference) */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+    --bp-2xl: 1536px;
+
+    /* Layout container cap for wide screens */
+    --container-max: 1280px;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    --motion-duration-fast: 160ms;
+    --motion-duration-base: 240ms;
+    --motion-duration-slow: 420ms;
+    --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Fluid sizes: rem + vw so zoom and user font settings still work */
+    --type-size-hero: clamp(
+      2.5rem,
+      1.5rem + 4vw,
+      4.5rem
+    ); /* 40 to 72px, page hero only */
+    --type-size-display: clamp(
+      2rem,
+      1.25rem + 2.5vw,
+      3rem
+    ); /* 32 to 48px, section headings */
+    --type-size-heading: clamp(
+      1.5rem,
+      1.1rem + 1.2vw,
+      2rem
+    ); /* 24 to 32px, sub-sections */
+    --type-size-title: clamp(
+      1.125rem,
+      1rem + 0.5vw,
+      1.375rem
+    ); /* 18 to 22px, card/category titles */
+    --type-size-lead: clamp(
+      1.125rem,
+      1.05rem + 0.3vw,
+      1.25rem
+    ); /* 18 to 20px, intro paragraphs */
+
+    /* Fixed sizes: these shouldn't scale with the screen */
+    --type-size-body: 1rem; /* 16px */
+    --type-size-small: 0.875rem; /* 14px, secondary text, card descriptions */
+    --type-size-caption: 0.75rem; /* 12px, badges, eyebrow labels, fine print */
+
+    --line-height-tight: 1.1; /* hero, display */
+    --line-height-snug: 1.25; /* headings, titles */
+    --line-height-body: 1.5; /* paragraphs */
+    --letter-spacing-caps: 0.12em; /* uppercase labels */
+  }
+}

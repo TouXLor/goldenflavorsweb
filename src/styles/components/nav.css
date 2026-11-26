@@ -1,0 +1,33 @@
+@layer components {
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--page-pad);
+    background: var(--color-brand-yellow);
+  }
+
+  .nav nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .nav__cta {
+    background: var(--color-brand-navy);
+    color: var(--color-brand-yellow);
+    padding: 0.5625rem 1.25rem;
+    border-radius: var(--radius-pill);
+  }
+
+  @media (max-width: 900px) {
+    .nav nav a:not(.nav__cta) {
+      display: none;
+    }
+  }
+}
